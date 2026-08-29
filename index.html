@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALPH PAY · Parent & Child Dual-App Experience & IA System</title>
+  <meta name="description" content="ALPH PAY - Parent Control Layer & Child Spending Layer. Saudi Family Fintech App featuring real-time limits, instant approvals, allowances, and QR payments.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Readex+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- App Header / Global Control Bar -->
+  <header class="global-header">
+    <div class="header-left">
+      <div class="brand-badge">
+        <div class="brand-logo-mark">
+          <span class="logo-triangle">▲</span>
+        </div>
+        <div class="brand-text-col">
+          <div class="brand-name">ALPH<span class="brand-accent">PAY</span></div>
+          <div class="brand-tagline">Parent & Child Architecture · Saudi Fintech</div>
+        </div>
+      </div>
+      
+      <div class="app-mode-chips">
+        <span class="mode-chip parent-chip">
+          <span class="dot-indicator indigo"></span> Parent = Control Layer (17)
+        </span>
+        <span class="mode-chip child-chip">
+          <span class="dot-indicator teal"></span> Child = Spending Layer (14)
+        </span>
+      </div>
+    </div>
+
+    <div class="header-controls">
+      <!-- Layout Mode Selector -->
+      <div class="view-mode-tabs" role="tablist">
+        <button class="view-tab active" data-view="dual" id="tab-dual-view">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="18" rx="2"/><rect x="14" y="3" width="7" height="18" rx="2"/></svg>
+          Dual Device Live
+        </button>
+        <button class="view-tab" data-view="parent" id="tab-parent-view">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="3"/></svg>
+          Parent App
+        </button>
+        <button class="view-tab" data-view="child" id="tab-child-view">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="3"/></svg>
+          Child App
+        </button>
+        <button class="view-tab" data-view="ia" id="tab-ia-view">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          IA Tree (31)
+        </button>
+      </div>
+
+      <!-- Start Login / Onboarding Flow Buttons -->
+      <button class="view-tab" style="background: var(--parent-subtle); color: var(--parent-primary); border: 1px solid var(--parent-border);" id="btn-start-onboarding" onclick="startParentOnboardingFlow()">
+        <span>🔑</span> Login / Onboarding (01)
+      </button>
+      <button class="view-tab" style="background: var(--child-subtle); color: var(--child-deep); border: 1px solid var(--child-border);" id="btn-start-child-onboarding" onclick="startChildOnboardingFlow()">
+        <span>👧</span> Child Onboarding (C01)
+      </button>
+
+      <!-- 5-Language Multi-Lingual Selector -->
+      <select class="header-lang-select" id="header-lang-select" onchange="setAppLanguage(this.value)" title="Change Language / భాష / भाषा / மொழி">
+        <option value="en" selected>🌐 English (EN)</option>
+        <option value="ar">🇸🇦 العربية (AR)</option>
+        <option value="te">🇮🇳 తెలుగు (TE)</option>
+        <option value="hi">🇮🇳 हिन्दी (HI)</option>
+        <option value="ta">🇮🇳 தமிழ் (TA)</option>
+      </select>
+
+      <!-- 5-Currency Selector -->
+      <select class="header-lang-select header-curr-select" id="header-curr-select" onchange="setAppCurrency(this.value)" title="Change Currency / కరెన్సీ మార్చండి">
+        <option value="SAR" selected>🇸🇦 SAR (ر.س)</option>
+        <option value="USD">🇺🇸 USD ($)</option>
+        <option value="AED">🇦🇪 AED (د.إ)</option>
+        <option value="INR">🇮🇳 INR (₹)</option>
+        <option value="EUR">🇪🇺 EUR (€)</option>
+      </select>
+
+      <!-- Currency Switcher / Reset -->
+      <button class="icon-tool-btn" id="btn-reset-demo" title="Reset Demo Data">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+      </button>
+    </div>
+  </header>
+
+
+
+  <!-- Main Workspace Layout -->
+  <main class="main-workspace" id="main-workspace">
+
+    <!-- Left Sidebar: Complete 31-Section Information Architecture Inspector -->
+    <aside class="ia-sidebar" id="ia-sidebar">
+      <div class="ia-sidebar-header">
+        <div class="ia-header-top">
+          <h3>Information Architecture</h3>
+          <span class="ia-count-badge">31 Sections</span>
+        </div>
+        <p class="ia-subtitle">Click any leaf node to deep-link simulate that screen</p>
+        <div class="ia-search-bar">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="ia-search-input" placeholder="Search screens, flows, limits, QR..." aria-label="Search Information Architecture">
+        </div>
+        <div class="ia-tree-actions">
+          <button class="tree-act-btn" id="btn-expand-all">Expand all</button>
+          <button class="tree-act-btn" id="btn-collapse-all">Collapse all</button>
+        </div>
+      </div>
+
+      <div class="ia-tree-container" id="ia-tree-container">
+        <!-- Rendered via JavaScript for all 31 sections -->
+      </div>
+    </aside>
+
+    <!-- Center / Right: Dual Phone Viewport Workspace -->
+    <section class="device-stage" id="device-stage">
+
+      <!-- ==================================================== -->
+      <!-- PARENT APP DEVICE (Control Layer · Indigo Accent)   -->
+      <!-- ==================================================== -->
+      <div class="phone-wrapper parent-device-wrapper" id="parent-device-wrapper">
+        <div class="device-label-bar parent-theme">
+          <div class="device-role-tag">
+            <span class="role-icon">🛡️</span>
+            <div>
+              <strong>PARENT APP · CONTROL LAYER</strong>
+              <small>Governance, Limits, Approvals & Funding</small>
+            </div>
+          </div>
+          <div class="device-badge-count">17 Sections</div>
+        </div>
+
+        <div class="smartphone-frame parent-frame">
+          <!-- Speaker & Dynamic Island / Camera Notch -->
+          <div class="phone-notch">
+            <div class="dynamic-island"></div>
+          </div>
+
+          <!-- Status Bar -->
+          <div class="phone-status-bar">
+            <span class="status-time" id="parent-clock">09:41</span>
+            <div class="status-icons">
+              <svg width="14" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L12 22l7.03-4.39C20.26 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9z"/></svg>
+              <svg width="14" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.24 4.24 0 0 0-6 0zm-4-4l2 2a9.9 9.9 0 0 1 14 0l2-2C19.79 9.79 14.21 9.79 5 13z"/></svg>
+              <span class="battery-icon">100%</span>
+            </div>
+          </div>
+
+          <!-- Phone Screen Container (Scrollable) -->
+          <div class="screen-viewport" id="parent-screen-viewport">
+            <!-- Dynamic Parent Screen Content Rendered by app.js -->
+          </div>
+
+          <!-- Bottom Sheet / Modal Overlay Layer -->
+          <div class="phone-modal-layer hidden" id="parent-modal-layer">
+            <div class="phone-modal-backdrop" id="parent-modal-backdrop"></div>
+            <div class="phone-bottom-sheet" id="parent-bottom-sheet">
+              <!-- Rendered contextually -->
+            </div>
+          </div>
+
+          <!-- Parent Mobile Primary Navigation Bar -->
+          <nav class="phone-bottom-nav parent-nav" id="parent-bottom-nav">
+            <button class="nav-item active" data-parent-tab="dashboard" id="pnav-dashboard">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <span id="pnav-lbl-dashboard">Home</span>
+            </button>
+            <button class="nav-item" data-parent-tab="children" id="pnav-children">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span id="pnav-lbl-children">Children</span>
+              <span class="nav-badge" id="nav-child-count">3</span>
+            </button>
+            <button class="nav-item" data-parent-tab="payments" id="pnav-payments">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+              <span id="pnav-lbl-payments">Payments</span>
+            </button>
+            <button class="nav-item" data-parent-tab="transactions" id="pnav-transactions">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <span id="pnav-lbl-transactions">Activity</span>
+            </button>
+            <button class="nav-item" data-parent-tab="more" id="pnav-more">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="6" height="6" x="3" y="3" rx="1"/><rect width="6" height="6" x="15" y="3" rx="1"/><rect width="6" height="6" x="3" y="15" rx="1"/><rect width="6" height="6" x="15" y="15" rx="1"/></svg>
+              <span id="pnav-lbl-more">Governance</span>
+              <span class="nav-badge alert-badge" id="nav-pending-badge">1</span>
+            </button>
+          </nav>
+
+          <!-- Home Bar -->
+          <div class="phone-home-indicator"></div>
+        </div>
+      </div>
+
+      <!-- Live Sync Connection Indicator (Center Connector) -->
+      <div class="sync-bridge" id="sync-bridge">
+        <div class="sync-line"></div>
+        <div class="sync-pulse-node" title="Real-time SAMA Banking & Child Sandbox Event Bridge">
+          <span class="sync-icon">⚡</span>
+          <span class="sync-label">LIVE SYNC</span>
+        </div>
+        <div class="sync-line"></div>
+      </div>
+
+      <!-- ==================================================== -->
+      <!-- CHILD APP DEVICE (Spending Layer · Teal Accent)      -->
+      <!-- ==================================================== -->
+      <div class="phone-wrapper child-device-wrapper" id="child-device-wrapper">
+        <div class="device-label-bar child-theme">
+          <div class="device-role-tag">
+            <span class="role-icon">💳</span>
+            <div>
+              <strong>CHILD APP · SPENDING LAYER</strong>
+              <small>Autonomy Within Boundaries · Sarah (14 yrs)</small>
+            </div>
+          </div>
+          <div class="device-badge-count">14 Sections</div>
+        </div>
+
+        <div class="smartphone-frame child-frame">
+          <!-- Speaker & Dynamic Island -->
+          <div class="phone-notch">
+            <div class="dynamic-island"></div>
+          </div>
+
+          <!-- Status Bar -->
+          <div class="phone-status-bar">
+            <span class="status-time" id="child-clock">09:41</span>
+            <div class="status-icons">
+              <svg width="14" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L12 22l7.03-4.39C20.26 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9z"/></svg>
+              <svg width="14" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.24 4.24 0 0 0-6 0zm-4-4l2 2a9.9 9.9 0 0 1 14 0l2-2C19.79 9.79 14.21 9.79 5 13z"/></svg>
+              <span class="battery-icon">98%</span>
+            </div>
+          </div>
+
+          <!-- Child Screen Container (Scrollable) -->
+          <div class="screen-viewport" id="child-screen-viewport">
+            <!-- Dynamic Child Screen Content Rendered by app.js -->
+          </div>
+
+          <!-- Child Modal Layer -->
+          <div class="phone-modal-layer hidden" id="child-modal-layer">
+            <div class="phone-modal-backdrop" id="child-modal-backdrop"></div>
+            <div class="phone-bottom-sheet" id="child-bottom-sheet">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Child Mobile Primary Navigation Bar -->
+          <nav class="phone-bottom-nav child-nav" id="child-bottom-nav">
+            <button class="nav-item active" data-child-tab="home" id="cnav-home">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <span id="cnav-lbl-home">Home</span>
+            </button>
+            <button class="nav-item" data-child-tab="wallet" id="cnav-wallet">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M16 12h.01"/><path d="M2 10h20"/></svg>
+              <span id="cnav-lbl-wallet">Wallet</span>
+            </button>
+            <button class="nav-item scan-hero-tab" data-child-tab="scan" id="cnav-scan">
+              <div class="scan-pill-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><rect width="8" height="8" x="8" y="8" rx="1"/></svg>
+              </div>
+              <span id="cnav-lbl-scan">Scan & Pay</span>
+            </button>
+            <button class="nav-item" data-child-tab="activity" id="cnav-activity">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <span id="cnav-lbl-activity">Activity</span>
+            </button>
+            <button class="nav-item" data-child-tab="more" id="cnav-more">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+              <span id="cnav-lbl-more">Hub</span>
+            </button>
+          </nav>
+
+          <!-- Home Bar -->
+          <div class="phone-home-indicator"></div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Global Toast Notification Center -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
