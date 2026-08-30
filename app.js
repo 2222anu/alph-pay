@@ -1,5 +1,5 @@
 /**
- * ALPH PAY · Master Interactive Application Engine
+ * AMANAH · Master Interactive Application Engine
  * Parent = Control Layer (Indigo) · Child = Spending Layer (Teal)
  * Complete Full Screen Architecture for All 31 Information Architecture Sections
  */
@@ -9,7 +9,7 @@
 // ==========================================================================
 const I18N = {
   en: {
-    appName: 'ALPH PAY',
+    appName: 'AMANAH',
     parentTitle: 'Parent Control Layer',
     childTitle: 'Child Spending Layer',
     familyBalance: 'Family Available Balance',
@@ -63,9 +63,9 @@ const I18N = {
     expires: 'EXPIRES',
     switchLangToast: 'Language switched to English 🇬🇧',
     loginOnboarding: 'Login / Onboarding (01)',
-    welcomeParent: 'Welcome to ALPH PAY',
+    welcomeParent: 'Welcome to AMANAH',
     welcomeParentSub: 'Sovereign Family Banking · Control & Spending Layer',
-    howItWorksTitle: 'How ALPH PAY Works (01.1):',
+    howItWorksTitle: 'How AMANAH Works (01.1):',
     step1Governance: 'Parent Sets Governance: Configure recurring allowances, daily limits & category blacklists.',
     step2ChildSafe: 'Child Spends Safely: Children pay via QR & Youth debit cards within safe guardrails.',
     step3Approvals: 'Real-Time Approvals: Instant push requests to Dad whenever a purchase exceeds limits.',
@@ -107,10 +107,10 @@ const I18N = {
     samaOpenBankingEstablished: '✓ SAMA Open Banking Direct Link Established',
     linkAccountCompleteBtn: 'Link Account & Complete (01.6) →',
     accountCreatedTitle: 'Account Created! (01.7)',
-    accountCreatedSub: 'Your ALPH PAY Parent Governance Account is active and verified under SAMA regulations.',
+    accountCreatedSub: 'Your AMANAH Parent Governance Account is active and verified under SAMA regulations.',
     addFirstChildBtn: '+ Add Your First Child (03.2)',
     goToDashboardBtn: 'Go to Dashboard (02) →',
-    welcomeYouthTitle: 'Welcome to ALPH Youth',
+    welcomeYouthTitle: 'Welcome to AMANAH Youth',
     welcomeYouthSub: 'Smart money, allowances & QR spending',
     enterInviteCodeLabel: 'Enter 6-Digit Invitation Code from Dad (C01.1)',
     linkedToParent: 'Linked to Parent: Ahmed Al-Farsi',
@@ -125,7 +125,7 @@ const I18N = {
     openYouthHomeBtn: 'Open My Youth Home (C02) →'
   },
   ar: {
-    appName: 'ألف باي',
+    appName: 'أمانة (AMANAH)',
     parentTitle: 'لوحة تحكم ولي الأمر',
     childTitle: 'محفظة الأبناء والإنفاق',
     familyBalance: 'رصيد العائلة المتاح',
@@ -179,9 +179,9 @@ const I18N = {
     expires: 'الانتهاء',
     switchLangToast: 'تم تغيير لغة التطبيق إلى العربية 🇸🇦',
     loginOnboarding: 'تسجيل الدخول / البدء (01)',
-    welcomeParent: 'مرحبًا بك في ألف باي',
+    welcomeParent: 'مرحبًا بك في أمانة (AMANAH)',
     welcomeParentSub: 'الخدمات المصرفية العائلية · التحكم والإنفاق',
-    howItWorksTitle: 'كيف يعمل تطبيق ألف باي (01.1):',
+    howItWorksTitle: 'كيف يعمل تطبيق أمانة (AMANAH) (01.1):',
     step1Governance: 'الأب يحدد الضوابط: تحديد المصروف الدوري والحدود اليومية وحظر الفئات.',
     step2ChildSafe: 'الأبناء ينفقون بأمان: الدفع عبر رمز QR والبطاقات الرقمية ضمن حدود آمنة.',
     step3Approvals: 'موافقات فورية: إشعارات فورية للأب عند تجاوز المشتريات للحد المسموح.',
@@ -241,7 +241,7 @@ const I18N = {
     openYouthHomeBtn: 'فتح صفحتي الرئيسية (C02) ←'
   },
   te: {
-    appName: 'ఆల్ఫ్ పే (ALPH PAY)',
+    appName: 'అమానా (AMANAH)',
     parentTitle: 'తండ్రి కంట్రోల్ లేయర్ (Parent)',
     childTitle: 'పిల్లల స్పెండింగ్ లేయర్ (Child)',
     familyBalance: 'ఫ్యామిలీ అందుబాటు బ్యాలెన్స్',
@@ -295,9 +295,9 @@ const I18N = {
     expires: 'గడువు తేదీ',
     switchLangToast: 'భాష తెలుగులోకి మార్చబడింది 🇮🇳',
     loginOnboarding: 'లాగిన్ / ఆన్‌బోర్డింగ్ (01)',
-    welcomeParent: 'ఆల్ఫ్ పే (ALPH PAY) కు స్వాగతం',
+    welcomeParent: 'అమానా (AMANAH) కు స్వాగతం',
     welcomeParentSub: 'ఫ్యామిలీ బ్యాంకింగ్ · కంట్రోల్ & స్పెండింగ్ లేయర్',
-    howItWorksTitle: 'ఆల్ఫ్ పే ఎలా పనిచేస్తుంది (01.1):',
+    howItWorksTitle: 'అమానా (AMANAH) ఎలా పనిచేస్తుంది (01.1):',
     step1Governance: 'తండ్రి నియంత్రణలు: రికరింగ్ పాకెట్ మనీ, డైలీ లిమిట్లు & కేటగిరీ బ్లాక్‌లిస్ట్ సెట్ చేయండి.',
     step2ChildSafe: 'పిల్లలు సురక్షితంగా ఖర్చు చేస్తారు: QR & యూత్ డెబిట్ కార్డులతో భద్రమైన పరిమితుల్లో ఖర్చు.',
     step3Approvals: 'రియల్-టైమ్ ఆమోదాలు: కొనుగోలు లిమిట్ దాటినప్పుడు తండ్రికి తక్షణ అప్రూవల్ రిక్వెస్ట్.',
@@ -357,7 +357,7 @@ const I18N = {
     openYouthHomeBtn: 'నా యూత్ హోమ్ ఓపెన్ చేయండి (C02) →'
   },
   hi: {
-    appName: 'अल्फ़ पे (ALPH PAY)',
+    appName: 'अमानह (AMANAH)',
     parentTitle: 'अभिभावक नियंत्रण (Parent)',
     childTitle: 'बाल खर्च व वॉलेट (Child)',
     familyBalance: 'परिवार उपलब्ध शेष राशि',
@@ -411,9 +411,9 @@ const I18N = {
     expires: 'समाप्ति तिथि',
     switchLangToast: 'भाषा हिन्दी में बदली गई 🇮🇳',
     loginOnboarding: 'लॉगिन / शुरुआत (01)',
-    welcomeParent: 'अल्फ़ पे में आपका स्वागत है',
+    welcomeParent: 'अमानह (AMANAH) में आपका स्वागत है',
     welcomeParentSub: 'पारिवारिक बैंकिंग · नियंत्रण एवं खर्च लेयर',
-    howItWorksTitle: 'अल्फ़ पे कैसे काम करता है (01.1):',
+    howItWorksTitle: 'अमानह (AMANAH) कैसे काम करता है (01.1):',
     step1Governance: 'अभिभावक नियंत्रण: पॉकेट मनी, दैनिक सीमा एवं श्रेणी प्रतिबंध सेट करें।',
     step2ChildSafe: 'बच्चे सुरक्षित खर्च करते हैं: QR कोड और डेबिट कार्ड से सुरक्षित सीमाओं में खर्च।',
     step3Approvals: 'त्वरित स्वीकृति: सीमा से अधिक खर्च होने पर पिता को तुरंत अनुमति अनुरोध।',
@@ -438,106 +438,230 @@ const I18N = {
     confirmIdentityBtn: 'पहचान की पुष्टि करें (01.3) →',
     kycVerificationTitle: 'KYC सत्यापन',
     nationalSso: 'राष्ट्रीय सिंगल साइन-ऑन (Nafath)',
-    nationalIdLabel: 'राष्ट्रीय आईडी / इकामा (01.4)',
-    nafathBiometricsVerified: '✓ बायोमेट्रिक्स सत्यापित (स्तर 3)',
-    nafathSub: 'केंद्रीय बैंक नियमों के तहत बहु-बाल बैंकिंग प्रबंधन हेतु अधिकृत।',
-    continueToSecurityBtn: 'सुरक्षा सेटअप पर आगे बढ़ें (01.4) →',
-    securitySetupTitle: 'सुरक्षा सेटअप (01.5)',
-    securitySetupSub: 'भुगतान स्वीकृति हेतु 4-अंकीय ऐप पिन बनाएं',
-    createAppPin: 'ऐप पिन बनाएं (01.5)',
-    confirmPin: 'पिन की पुष्टि करें',
-    enableBiometrics: 'फेस आईडी / बायोमेट्रिक्स सक्षम करें',
-    saveSecurityBtn: 'सुरक्षा सहेजें और आगे बढ़ें (01.5) →',
-    fundingAccountTitle: 'बैंक खाता लिंक करें (01.6)',
-    fundingAccountSub: 'अपना प्राथमिक बैंक खाता लिंक करें',
-    selectedBank: 'चयनित बैंक',
-    ibanNumber: 'सऊदी IBAN नंबर',
-    samaOpenBankingEstablished: '✓ ओपन बैंकिंग डायरेक्ट लिंक स्थापित',
-    linkAccountCompleteBtn: 'खाता लिंक करें और पूर्ण करें (01.6) →',
-    accountCreatedTitle: 'खाता सफलतापूर्वक बन गया! (01.7)',
-    accountCreatedSub: 'आपका अल्फ़ पे अभिभावक खाता सक्रिय और सत्यापित है।',
-    addFirstChildBtn: '+ अपना पहला बच्चा जोड़ें (03.2)',
-    goToDashboardBtn: 'डैशबोर्ड पर जाएं (02) →',
-    welcomeYouthTitle: 'अल्फ़ यूथ में आपका स्वागत है',
-    welcomeYouthSub: 'स्मार्ट पॉकेट मनी, भत्ते एवं QR खर्च',
-    enterInviteCodeLabel: 'पिताजी से मिला 6-अंकीय आमंत्रण कोड दर्ज करें (C01.1)',
-    linkedToParent: 'अभिभावक से लिंक: अहमद अल-फ़ारसी',
-    claimInviteBtn: 'आमंत्रण स्वीकार करें (C01.1) →',
-    createYouthPinTitle: '4-अंकीय यूथ पिन बनाएं',
-    createYouthPinSub: 'QR भुगतान की पुष्टि के लिए उपयोग होगा',
-    enterPin: 'पिन दर्ज करें',
-    enableFaceId: 'फेस आईडी सक्षम करें',
-    activateYouthCardBtn: 'मेरा यूथ कार्ड सक्रिय करें (C01.1) →',
-    readyYouthTitle: 'आप तैयार हैं, सारा! (C01)',
-    readyYouthSub: 'आपकी साप्ताहिक पॉकेट मनी और दैनिक खर्च सीमा सक्रिय है।',
-    openYouthHomeBtn: 'मेरा यूथ होम खोलें (C02) →'
-  },
-  ta: {
-    appName: 'ஆல்ஃப் பே (ALPH PAY)',
-    parentTitle: 'பெற்றோர் கட்டுப்பாட்டு அடுக்கு (Parent)',
-    childTitle: 'குழந்தை செலவு அடுக்கு (Child)',
-    familyBalance: 'குடும்ப இருப்பு தொகை',
-    totalAllocated: 'மொத்த ஒதுக்கீடு',
-    totalSpent: 'மொத்த செலவு',
-    weekly: 'வாராந்திர',
-    monthly: 'மாதாந்திர',
-    yearly: 'வருடாந்திர',
-    childrenAllocation: 'குழந்தைகள் ஒதுக்கீடு & கட்டுப்பாடு (02.3)',
-    childrenSavingsGoals: 'சேமிப்பு இலக்குகள் & முன்னேற்றம் (02.8)',
-    spendingAnalytics: 'செலவு பகுப்பாய்வு & பை சார்ட் (02.6)',
-    allFamily: 'முழு குடும்பம்',
-    recentTx: 'சமீபத்திய பரிவர்த்தனைகள் (02.7)',
-    sendMoney: 'பணம் அனுப்பு (08)',
-    allowance: 'பாக்கெட் மணி (04)',
-    praiseReward: 'பாராட்டு & பரிசு ⭐',
-    addChild: 'குழந்தை சேர் (03)',
-    dashboard: 'முகப்பு',
-    childrenTab: 'குழந்தைகள்',
-    paymentsTab: 'பணம் செலுத்துதல்',
-    txTab: 'செயல்பாடு',
-    moreTab: 'அமைப்புகள்',
-    childHome: 'முகப்பு',
-    childWallet: 'வாலெட்',
-    childScan: 'ஸ்கேன் & பணம் செலுத்து',
-    childActivity: 'செயல்பாடு',
-    childMore: 'ஹப்',
-    availableToday: 'இன்று செலவிடக்கூடியது',
-    dailyLimit: 'தினசரி வரம்பு',
-    savingsGoal: 'சேமிப்பு இலக்கு',
-    saved: 'சேமிக்கப்பட்டது',
-    target: 'இலக்கு',
-    remaining: 'மீதமுள்ள தொகை',
-    boostGoal: '🚀 பூஸ்ட் +50',
-    details: 'விவரங்கள் →',
-    viewPie: '📊 பை சார்ட்',
-    activeGoals: 'செயலில் உள்ள இலக்குகள்',
-    otpTitle: '🔐 6-இலக்க OTP ஐ உள்ளிடவும்',
-    mockOtp: '6-இலக்க பாதுகாப்பு குறியீடு',
-    autoFillOtp: '',
-    resendOtp: 'மீண்டும் அனுப்பு (28s)',
-    approveOtp: 'OTP மூலம் அங்கீகரி (10.4) ✓',
-    decline: 'நிராகரி (10.5)',
-    praiseTitle: 'பாராட்டு அனுப்பு:',
-    sendPraiseBtn: 'பாராட்டு & பரிசு அனுப்பு ⭐ →',
-    scanQrBtn: 'QR ஸ்கேன் செய்து பணம் செலுத்து (C06)',
-    guardrails: 'செலவு வரம்புகள் (C04)',
-    managedByDad: 'தந்தையால் நிர்வகிக்கப்படுகிறது',
-    digitalCard: 'டிஜிட்டல் டெபிட் கார்டு (C03)',
-    cardholder: 'அட்டைதாரர் பெயர்',
-    expires: 'காலாவதி தேதி',
-    switchLangToast: 'மொழி தமிழுக்கு மாற்றப்பட்டது 🇮🇳',
-    loginOnboarding: 'உள்நுழைவு / தொடக்கம் (01)',
-    welcomeParent: 'ஆல்ஃப் பே-க்கு வரவேற்கிறோம்',
-    welcomeParentSub: 'குடும்ப வங்கி சேவை · கட்டுப்பாடு மற்றும் செலவு',
-    howItWorksTitle: 'ஆல்ஃப் பே எவ்வாறு செயல்படுகிறது (01.1):',
-    step1Governance: 'பெற்றோர் கட்டுப்பாடு: பாக்கெட் மணி, தினசரி வரம்புகள் மற்றும் வகை தடைகளை அமைக்கவும்.',
-    step2ChildSafe: 'குழந்தைகள் பாதுகாப்பாக செலவழிக்கிறார்கள்: QR குறியீடு மற்றும் கார்டு மூலம் பாதுகாப்பான வரம்பில் செலவு.',
-    step3Approvals: 'உடனடி ஒப்புதல்: வரம்புக்கு மேல் செலவழிக்கும் போது தந்தைக்கு உடனடி அனுமதி கோரிக்கை.',
-    getStartedBtn: 'தொடங்குங்கள் — புதிய கணக்கு (01.1) →',
-    alreadyHaveAccountBtn: 'ஏற்கனவே கணக்கு உள்ளதா? உள்நுழையவும் (01.2)',
-    enterMobileTitle: 'மொபைல் எண்ணை உள்ளிடவும்',
-    enterMobileSub: 'நாங்கள் ஒரு முறை சரிபார்ப்புக் குறியீட்டை (OTP) அனுப்புவோம்',
-    countryMobileLabel: 'நாடு & மொபைல் (01.2)',
+    nationalIdLabel: 'राष्ट्री      regionCode: 'IN',
+      countryName: 'India',
+      flag: '🇮🇳',
+      currency: 'INR',
+      currencySymbol: '₹',
+      nationality: 'Indian 🇮🇳',
+      parentName: 'Rajesh Sharma',
+      cardBrand: 'AMANAH JUNIOR',
+      cardNetwork: 'RuPay',
+      cardScheme: 'RuPay',
+      childNames: {
+        sara: 'Sara Sharma',
+        omar: 'Aman Sharma',
+        youssef: 'Rohan Sharma'
+      },
+      phoneCountryPill: '🇮🇳 +91',
+      phoneSample: '98 7654 3210',
+      phonePlaceholder: '9X XXXX XXXX',
+      regulator: 'RBI & NPCI',
+      regulatorTerms: 'By proceeding you agree to Reserve Bank of India (RBI) & NPCI digital banking terms.',
+      idLabel: 'Aadhaar / PAN Card / DigiLocker (01.4)',
+      idSample: 'Aadhaar: 4589 •••• •••• 9012',
+      kycTitle: 'DigiLocker & UIDAI KYC Verification',
+      kycSub: 'National Single Sign-On (DigiLocker / Aadhaar)',
+      kycStatusText: 'DigiLocker Aadhaar e-KYC Verified (Level 3)',
+      kycDesc: 'Fully authorized for multi-child family banking governance under Reserve Bank of India (RBI) rules.',
+      fundingSub: 'Link your primary Indian bank account',
+      banks: [
+        'HDFC Bank (एचडीएफसी बैंक)',
+        'State Bank of India (SBI - భారతీయ స్టేट बैंक)',
+        'ICICI Bank (आईसीआईसीआई बैंक)',
+        'Axis Bank (एक्सिस बैंक)',
+        'Kotak Mahindra Bank'
+      ],
+      accountTypeLabel: 'Indian Bank Account & IFSC / UPI ID',
+      accountNumberSample: 'A/C: 50100234567890 (IFSC: HDFC0001234)',
+      openBankingBadge: '✓ RBI & NPCI Open Banking / UPI AutoPay Direct Link Established',
+      parentAccountCompliance: 'Your AMANAH Parent Governance Account is active and verified under RBI & NPCI regulations.',
+      sampleMerchant: 'Oxford Book Store & Stationery',
+      sampleCafeteria: 'School Canteen / Cafeteria',
+      sampleGaming: 'PlayStation Store India'
+    };
+  }
+
+  // 2. United States Region
+  if (curr === 'USD') {
+    return {
+      regionCode: 'US',
+      countryName: 'United States',
+      flag: '🇺🇸',
+      currency: 'USD',
+      currencySymbol: '$',
+      nationality: 'American 🇺🇸',
+      parentName: 'David Miller',
+      cardBrand: 'AMANAH TEEN',
+      cardNetwork: 'VISA',
+      cardScheme: 'VISA',
+      childNames: {
+        sara: 'Sara Miller',
+        omar: 'Oliver Miller',
+        youssef: 'Ethan Miller'
+      },
+      phoneCountryPill: '🇺🇸 +1',
+      phoneSample: '415 555 2671',
+      phonePlaceholder: '(555) 000-0000',
+      regulator: 'US Fed & FinCEN',
+      regulatorTerms: 'By proceeding you agree to US Federal electronic banking regulations.',
+      idLabel: 'US SSN / Tax ID (01.4)',
+      idSample: 'SSN: •••-••-8492',
+      kycTitle: 'FinCEN & Plaid KYC Verification',
+      kycSub: 'National Identity & SSN Verification',
+      kycStatusText: 'FinCEN Identity Verified (Level 3)',
+      kycDesc: 'Fully authorized for family banking under US financial regulations.',
+      fundingSub: 'Link your primary US bank account',
+      banks: [
+        'Chase Bank (JPMorgan Chase)',
+        'Bank of America',
+        'Wells Fargo Bank',
+        'Citibank'
+      ],
+      accountTypeLabel: 'US Routing & Checking Account Number',
+      accountNumberSample: 'Routing: 021000021 · Checking: •••• 4892',
+      openBankingBadge: '✓ FedNow & Plaid Open Banking Link Established',
+      parentAccountCompliance: 'Your AMANAH Parent Governance Account is active and verified under US Banking regulations.',
+      sampleMerchant: 'Barnes & Noble Booksellers',
+      sampleCafeteria: 'Campus Cafeteria',
+      sampleGaming: 'PlayStation Store US'
+    };
+  }
+
+  // 3. UAE Region
+  if (curr === 'AED') {
+    return {
+      regionCode: 'AE',
+      countryName: 'UAE',
+      flag: '🇦🇪',
+      currency: 'AED',
+      currencySymbol: 'د.إ',
+      nationality: 'Emirati 🇦🇪',
+      parentName: 'Rashid Al-Nuaimi',
+      cardBrand: 'AMANAH YOUTH',
+      cardNetwork: 'Jaywan',
+      cardScheme: 'Jaywan',
+      childNames: {
+        sara: 'Sara Al-Nuaimi',
+        omar: 'Omar Al-Nuaimi',
+        youssef: 'Zayed Al-Nuaimi'
+      },
+      phoneCountryPill: '🇦🇪 +971',
+      phoneSample: '50 123 4567',
+      phonePlaceholder: '5X XXX XXXX',
+      regulator: 'CBUAE',
+      regulatorTerms: 'By proceeding you agree to Central Bank of the UAE electronic banking terms.',
+      idLabel: 'Emirates ID (01.4)',
+      idSample: '784-1986-1234567-1',
+      kycTitle: 'UAE PASS & CBUAE KYC Verification',
+      kycSub: 'National Digital Identity (UAE PASS)',
+      kycStatusText: 'UAE PASS Biometrics Verified (Level 3)',
+      kycDesc: 'Fully authorized for family banking governance under CBUAE regulations.',
+      fundingSub: 'Link your primary UAE bank account',
+      banks: [
+        'Emirates NBD (بنك الإمارات دبي الوطني)',
+        'Abu Dhabi Commercial Bank (ADCB)',
+        'First Abu Dhabi Bank (FAB)',
+        'Dubai Islamic Bank (DIB)'
+      ],
+      accountTypeLabel: 'UAE IBAN Number',
+      accountNumberSample: 'AE21 0330 0000 1234 5678 901',
+      openBankingBadge: '✓ CBUAE Open Banking Direct Link Established',
+      parentAccountCompliance: 'Your AMANAH Parent Governance Account is active and verified under CBUAE regulations.',
+      sampleMerchant: 'Kinokuniya Book World Dubai',
+      sampleCafeteria: 'School Canteen',
+      sampleGaming: 'Virgin Megastore Gaming'
+    };
+  }
+
+  // 4. European Union Region
+  if (curr === 'EUR') {
+    return {
+      regionCode: 'EU',
+      countryName: 'European Union',
+      flag: '🇪🇺',
+      currency: 'EUR',
+      currencySymbol: '€',
+      nationality: 'European 🇪🇺',
+      parentName: 'Stefan Weber',
+      cardBrand: 'AMANAH JUNIOR',
+      cardNetwork: 'Mastercard',
+      cardScheme: 'Mastercard',
+      childNames: {
+        sara: 'Sara Weber',
+        omar: 'Lukas Weber',
+        youssef: 'Leon Weber'
+      },
+      phoneCountryPill: '🇪🇺 +49',
+      phoneSample: '170 1234567',
+      phonePlaceholder: '1XX XXXXXXX',
+      regulator: 'ECB & EBA',
+      regulatorTerms: 'By proceeding you agree to European Union PSD2 banking regulations.',
+      idLabel: 'EU National ID / Passport (01.4)',
+      idSample: 'EU-ID: T220001293',
+      kycTitle: 'eIDAS & European Central Bank KYC',
+      kycSub: 'eIDAS Digital Identity Verification',
+      kycStatusText: 'eIDAS Biometrics Verified (Level 3)',
+      kycDesc: 'Fully authorized for family banking governance under PSD2 & ECB regulations.',
+      fundingSub: 'Link your primary European bank account',
+      banks: [
+        'Deutsche Bank',
+        'BNP Paribas',
+        'Banco Santander',
+        'ING Group'
+      ],
+      accountTypeLabel: 'SEPA IBAN Number',
+      accountNumberSample: 'DE89 3704 0044 0532 0130 00',
+      openBankingBadge: '✓ PSD2 Open Banking Direct Link Established',
+      parentAccountCompliance: 'Your AMANAH Parent Governance Account is active and verified under ECB/PSD2 regulations.',
+      sampleMerchant: 'Thalia Buchhandlung',
+      sampleCafeteria: 'School Bistro',
+      sampleGaming: 'PlayStation Store Europe'
+    };
+  }
+
+  // 5. Default: Saudi Arabia Region (SAR / Arabic)
+  return {
+    regionCode: 'SA',
+    countryName: 'Saudi Arabia',
+    flag: '🇸🇦',
+    currency: 'SAR',
+    currencySymbol: 'ر.س',
+    nationality: 'Saudi 🇸🇦',
+    parentName: 'Ahmed Al-Farsi',
+    cardBrand: 'AMANAH YOUTH',
+    cardNetwork: 'mada',
+    cardScheme: 'mada',
+    childNames: {
+      sara: 'Sara Al-Farsi',
+      omar: 'Omar Al-Farsi',
+      youssef: 'Youssef Al-Farsi'
+    },
+    phoneCountryPill: '🇸🇦 +966',
+    phoneSample: '50 123 4567',
+    phonePlaceholder: '5X XXX XXXX',
+    regulator: 'SAMA',
+    regulatorTerms: 'By proceeding you agree to SAMA electronic banking terms.',
+    idLabel: 'Saudi National ID / Iqama (01.4)',
+    idSample: '1089345210',
+    kycTitle: 'SAMA KYC Verification',
+    kycSub: 'National Single Sign-On (Nafath)',
+    kycStatusText: 'Nafath Biometrics Verified (Level 3)',
+    kycDesc: 'Fully authorized for multi-child family banking governance under Saudi Central Bank rules.',
+    fundingSub: 'Link your primary Saudi bank account',
+    banks: [
+      'Al Rajhi Bank (مصرف الراجحي)',
+      'Saudi National Bank (SNB الأهلي)',
+      'Riyad Bank (بنك الرياض)'
+    ],
+    accountTypeLabel: 'Saudi IBAN Number',
+    accountNumberSample: 'SA44 8000 0456 1234 5678 90',
+    openBankingBadge: '✓ SAMA Open Banking Direct Link Established',
+    parentAccountCompliance: 'Your AMANAH Parent Governance Account is active and verified under SAMA regulations.',
+    sampleMerchant: 'Al Jarir Bookstore',
+    sampleCafeteria: 'School Cafeteria',
+    sampleGaming: 'PlayStation Store'
+  };��் (01.2)',
     samaTerms: 'தொடர்வதன் மூலம் நீங்கள் வங்கி விதிமுறைகளை ஏற்றுக்கொள்கிறீர்கள்.',
     sendOtpBtn: 'OTP குறியீட்டை அனுப்பவும் (01.2) →',
     backBtn: '← பின்செல்',
@@ -634,7 +758,7 @@ function getAppRegionConfig() {
       currencySymbol: '₹',
       nationality: 'Indian 🇮🇳',
       parentName: 'Rajesh Sharma',
-      cardBrand: 'ALPH PAY JUNIOR',
+      cardBrand: 'AMANAH JUNIOR',
       cardNetwork: 'RuPay',
       cardScheme: 'RuPay',
       childNames: {
@@ -664,7 +788,7 @@ function getAppRegionConfig() {
       accountTypeLabel: 'Indian Bank Account & IFSC / UPI ID',
       accountNumberSample: 'A/C: 50100234567890 (IFSC: HDFC0001234)',
       openBankingBadge: '✓ RBI & NPCI Open Banking / UPI AutoPay Direct Link Established',
-      parentAccountCompliance: 'Your ALPH PAY Parent Governance Account is active and verified under RBI & NPCI regulations.',
+      parentAccountCompliance: 'Your AMANAH Parent Governance Account is active and verified under RBI & NPCI regulations.',
       sampleMerchant: 'Oxford Book Store & Stationery',
       sampleCafeteria: 'School Canteen / Cafeteria',
       sampleGaming: 'PlayStation Store India'
@@ -681,7 +805,7 @@ function getAppRegionConfig() {
       currencySymbol: '$',
       nationality: 'American 🇺🇸',
       parentName: 'David Miller',
-      cardBrand: 'ALPH PAY TEEN',
+      cardBrand: 'AMANAH TEEN',
       cardNetwork: 'VISA',
       cardScheme: 'VISA',
       childNames: {
@@ -710,7 +834,7 @@ function getAppRegionConfig() {
       accountTypeLabel: 'US Routing & Checking Account Number',
       accountNumberSample: 'Routing: 021000021 · Checking: •••• 4892',
       openBankingBadge: '✓ FedNow & Plaid Open Banking Link Established',
-      parentAccountCompliance: 'Your ALPH PAY Parent Governance Account is active and verified under US Banking regulations.',
+      parentAccountCompliance: 'Your AMANAH Parent Governance Account is active and verified under US Banking regulations.',
       sampleMerchant: 'Barnes & Noble Booksellers',
       sampleCafeteria: 'Campus Cafeteria',
       sampleGaming: 'PlayStation Store US'
@@ -727,7 +851,7 @@ function getAppRegionConfig() {
       currencySymbol: 'د.إ',
       nationality: 'Emirati 🇦🇪',
       parentName: 'Rashid Al-Nuaimi',
-      cardBrand: 'ALPH PAY YOUTH',
+      cardBrand: 'AMANAH YOUTH',
       cardNetwork: 'Jaywan',
       cardScheme: 'Jaywan',
       childNames: {
@@ -756,7 +880,7 @@ function getAppRegionConfig() {
       accountTypeLabel: 'UAE IBAN Number',
       accountNumberSample: 'AE21 0330 0000 1234 5678 901',
       openBankingBadge: '✓ CBUAE Open Banking Direct Link Established',
-      parentAccountCompliance: 'Your ALPH PAY Parent Governance Account is active and verified under CBUAE regulations.',
+      parentAccountCompliance: 'Your AMANAH Parent Governance Account is active and verified under CBUAE regulations.',
       sampleMerchant: 'Kinokuniya Book World Dubai',
       sampleCafeteria: 'School Canteen',
       sampleGaming: 'Virgin Megastore Gaming'
@@ -773,7 +897,7 @@ function getAppRegionConfig() {
       currencySymbol: '€',
       nationality: 'European 🇪🇺',
       parentName: 'Stefan Weber',
-      cardBrand: 'ALPH PAY JUNIOR',
+      cardBrand: 'AMANAH JUNIOR',
       cardNetwork: 'Mastercard',
       cardScheme: 'Mastercard',
       childNames: {
@@ -802,7 +926,7 @@ function getAppRegionConfig() {
       accountTypeLabel: 'SEPA IBAN Number',
       accountNumberSample: 'DE89 3704 0044 0532 0130 00',
       openBankingBadge: '✓ PSD2 Open Banking Direct Link Established',
-      parentAccountCompliance: 'Your ALPH PAY Parent Governance Account is active and verified under ECB/PSD2 regulations.',
+      parentAccountCompliance: 'Your AMANAH Parent Governance Account is active and verified under ECB/PSD2 regulations.',
       sampleMerchant: 'Thalia Buchhandlung',
       sampleCafeteria: 'School Bistro',
       sampleGaming: 'PlayStation Store Europe'
@@ -818,7 +942,7 @@ function getAppRegionConfig() {
     currencySymbol: 'ر.س',
     nationality: 'Saudi 🇸🇦',
     parentName: 'Ahmed Al-Farsi',
-    cardBrand: 'ALPH PAY YOUTH',
+    cardBrand: 'AMANAH YOUTH',
     cardNetwork: 'mada',
     cardScheme: 'mada',
     childNames: {
@@ -846,7 +970,7 @@ function getAppRegionConfig() {
     accountTypeLabel: 'Saudi IBAN Number',
     accountNumberSample: 'SA44 8000 0456 1234 5678 90',
     openBankingBadge: '✓ SAMA Open Banking Direct Link Established',
-    parentAccountCompliance: 'Your ALPH PAY Parent Governance Account is active and verified under SAMA regulations.',
+    parentAccountCompliance: 'Your AMANAH Parent Governance Account is active and verified under SAMA regulations.',
     sampleMerchant: 'Al Jarir Bookstore',
     sampleCafeteria: 'School Cafeteria',
     sampleGaming: 'PlayStation Store'
@@ -1111,7 +1235,7 @@ const AppState = {
   parent: {
     name: 'Ahmed Al-Farsi',
     phone: '+966 50 123 4567',
-    email: 'ahmed.alfarsi@alph.sa',
+    email: 'ahmed.alfarsi@amanah.sa',
     kycStatus: 'Verified (SAMA Level 3)',
     nationalId: '1098765432',
     bankName: 'Al Rajhi Bank',
@@ -1334,7 +1458,7 @@ const IATreeData = {
       code: '01',
       title: 'Authentication & Onboarding',
       sub: [
-        { code: '01.1', title: 'Welcome', leaves: ['App introduction', 'How Alph Pay works', 'Get Started'] },
+        { code: '01.1', title: 'Welcome', leaves: ['App introduction', 'How Amanah works', 'Get Started'] },
         { code: '01.2', title: 'Account Registration', leaves: ['Mobile number', 'Country code', 'OTP verification', 'Resend OTP', 'Change mobile number'] },
         { code: '01.3', title: 'Parent Identity / Profile', leaves: ['Full name', 'Date of birth', 'Nationality', 'Email', 'Mobile number', 'Profile confirmation'] },
         { code: '01.4', title: 'Parent Verification', leaves: ['Identity verification', 'Required identity information', 'Verification status', 'Verification pending', 'Verification failed', 'Retry / correction'] },
@@ -2494,7 +2618,7 @@ function renderParentHelpScreen() {
           <div class="tx-icon-box">🎧</div>
           <div class="tx-details">
             <h5>16.3 Contact 24/7 Live Support</h5>
-            <small>Chat with ALPH Family Specialist</small>
+            <small>Chat with AMANAH Family Specialist</small>
           </div>
         </div>
         <button class="tree-act-btn">Chat</button>
@@ -2530,7 +2654,7 @@ function renderParentExitScreen() {
 
     <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 20px; text-align: center; margin-top: 10px;">
       <div style="font-size: 40px; margin-bottom: 10px;">🚪</div>
-      <h4 style="font-size: 16px; font-weight: 800;">Log Out of ALPH PAY</h4>
+      <h4 style="font-size: 16px; font-weight: 800;">Log Out of AMANAH</h4>
       <p style="font-size: 12px; color: var(--text-secondary); margin: 6px 0 16px 0;">
         You will need your App PIN or Face ID to access your parent governance controls again.
       </p>
@@ -4742,7 +4866,7 @@ window.openChildReceipt = function(merchant, amount, isOtpApproved = false) {
       <p style="font-size: 12px; color: var(--text-secondary);">${merchant} · Today</p>
 
       <div style="background: var(--bg-surface-elevated); border-radius: var(--radius-md); padding: 12px; margin: 16px 0; text-align: left; font-size: 11px; line-height: 1.6;">
-        <div style="display: flex; justify-content: space-between;"><span>Payment Method:</span><strong>ALPH Youth QR</strong></div>
+        <div style="display: flex; justify-content: space-between;"><span>Payment Method:</span><strong>AMANAH Youth QR</strong></div>
         <div style="display: flex; justify-content: space-between;"><span>Authorization:</span><strong>${isOtpApproved ? '✓ Dad OTP Authorized' : '✓ Auto-Approved (< Limit)'}</strong></div>
         <div style="display: flex; justify-content: space-between;"><span>Auth Ref:</span><strong>TXN-${Math.floor(Math.random()*900000+100000)}</strong></div>
       </div>
@@ -5053,7 +5177,7 @@ window.openParentModal = function(type, payload = {}) {
         <span class="ia-count-badge">IA Section 03.2 · Add Child</span>
         <button class="btn-ceo-close" onclick="closeParentModal()">✕</button>
       </div>
-      <h3 style="font-size: 16px; font-weight: 800; margin-bottom: 12px;">Invite Child to ALPH PAY</h3>
+      <h3 style="font-size: 16px; font-weight: 800; margin-bottom: 12px;">Invite Child to AMANAH</h3>
       <div class="form-group">
         <label class="form-label">Child's Full Name</label>
         <input type="text" class="form-input" id="add-child-name" placeholder="e.g. Layla Al-Farsi">
@@ -5488,53 +5612,138 @@ function setViewMode(mode) {
   const childWrapper = document.getElementById('child-device-wrapper');
   const syncBridge = document.getElementById('sync-bridge');
   const iaSidebar = document.getElementById('ia-sidebar');
+  const scaler = document.getElementById('stage-viewport-scaler');
 
   document.querySelectorAll('.view-tab').forEach(t => {
-    t.classList.toggle('active', t.dataset.view === mode);
+    if (t.dataset.view) {
+      t.classList.toggle('active', t.dataset.view === mode);
+    }
   });
 
   if (mode === 'dual') {
     if (parentWrapper) parentWrapper.style.display = 'flex';
     if (childWrapper) childWrapper.style.display = 'flex';
     if (syncBridge) syncBridge.style.display = 'flex';
+    if (scaler) scaler.style.display = 'flex';
     if (iaSidebar) {
-      iaSidebar.style.display = 'flex';
-      iaSidebar.style.width = '360px';
-      iaSidebar.style.maxWidth = '360px';
-      iaSidebar.style.margin = '0';
+      iaSidebar.classList.add('collapsed');
+      iaSidebar.style.width = '';
+      iaSidebar.style.maxWidth = '';
+      iaSidebar.style.margin = '';
     }
+    updateSidebarToggleUI(true);
   } else if (mode === 'parent') {
     if (parentWrapper) parentWrapper.style.display = 'flex';
     if (childWrapper) childWrapper.style.display = 'none';
     if (syncBridge) syncBridge.style.display = 'none';
+    if (scaler) scaler.style.display = 'flex';
     if (iaSidebar) {
-      iaSidebar.style.display = 'flex';
-      iaSidebar.style.width = '360px';
-      iaSidebar.style.maxWidth = '360px';
-      iaSidebar.style.margin = '0';
+      iaSidebar.classList.add('collapsed');
+      iaSidebar.style.width = '';
+      iaSidebar.style.maxWidth = '';
+      iaSidebar.style.margin = '';
     }
+    updateSidebarToggleUI(true);
   } else if (mode === 'child') {
     if (parentWrapper) parentWrapper.style.display = 'none';
     if (childWrapper) childWrapper.style.display = 'flex';
     if (syncBridge) syncBridge.style.display = 'none';
+    if (scaler) scaler.style.display = 'flex';
     if (iaSidebar) {
-      iaSidebar.style.display = 'flex';
-      iaSidebar.style.width = '360px';
-      iaSidebar.style.maxWidth = '360px';
-      iaSidebar.style.margin = '0';
+      iaSidebar.classList.add('collapsed');
+      iaSidebar.style.width = '';
+      iaSidebar.style.maxWidth = '';
+      iaSidebar.style.margin = '';
     }
+    updateSidebarToggleUI(true);
   } else if (mode === 'ia') {
     if (parentWrapper) parentWrapper.style.display = 'none';
     if (childWrapper) childWrapper.style.display = 'none';
     if (syncBridge) syncBridge.style.display = 'none';
+    if (scaler) scaler.style.display = 'none';
     if (iaSidebar) {
+      iaSidebar.classList.remove('collapsed');
       iaSidebar.style.display = 'flex';
       iaSidebar.style.width = '100%';
-      iaSidebar.style.maxWidth = '900px';
+      iaSidebar.style.maxWidth = '960px';
       iaSidebar.style.margin = '0 auto';
     }
+    updateSidebarToggleUI(false);
+  }
+
+  setTimeout(updateStageScale, 20);
+}
+
+function updateSidebarToggleUI(showToggle) {
+  const toggleBtn = document.getElementById('btn-toggle-sidebar');
+  const headerToggle = document.getElementById('btn-header-toggle-ia');
+  const sidebar = document.getElementById('ia-sidebar');
+  if (toggleBtn) {
+    toggleBtn.style.display = showToggle ? 'flex' : 'none';
+    const isCollapsed = sidebar ? sidebar.classList.contains('collapsed') : true;
+    const btnLbl = document.getElementById('btn-toggle-sidebar-lbl');
+    if (btnLbl) btnLbl.textContent = isCollapsed ? 'Show IA Tree' : 'Hide IA Tree';
+  }
+  if (headerToggle) {
+    headerToggle.style.display = showToggle ? 'flex' : 'none';
+    const isCollapsed = sidebar ? sidebar.classList.contains('collapsed') : true;
+    const headerLbl = document.getElementById('btn-header-toggle-ia-lbl');
+    if (headerLbl) headerLbl.textContent = isCollapsed ? 'Show IA' : 'Hide IA';
   }
 }
+
+function toggleIASidebar() {
+  const sidebar = document.getElementById('ia-sidebar');
+  if (!sidebar) return;
+  const isCollapsed = sidebar.classList.toggle('collapsed');
+  AppState.sidebarCollapsed = isCollapsed;
+  updateSidebarToggleUI(true);
+  setTimeout(updateStageScale, 150);
+}
+
+function setAppScale(val) {
+  AppState.customZoom = val;
+  updateStageScale();
+}
+
+function updateStageScale() {
+  const stage = document.getElementById('device-stage');
+  const scaler = document.getElementById('stage-viewport-scaler');
+  if (!stage || !scaler) return;
+
+  if (AppState.customZoom && AppState.customZoom !== 'auto') {
+    const zoomVal = parseFloat(AppState.customZoom);
+    scaler.style.transform = `scale(${zoomVal})`;
+    return;
+  }
+
+  const stageW = stage.clientWidth;
+  const stageH = stage.clientHeight;
+  if (stageW <= 0 || stageH <= 0) return;
+
+  const isDual = (AppState.viewMode === 'dual');
+  const isSingle = (AppState.viewMode === 'parent' || AppState.viewMode === 'child');
+
+  const baseW = isDual ? 840 : (isSingle ? 400 : 840);
+  const baseH = 825;
+
+  const padX = 28;
+  const padY = 24;
+
+  const availW = stageW - padX;
+  const availH = stageH - padY;
+
+  let scale = Math.min(availW / baseW, availH / baseH);
+  if (scale > 1.0) scale = 1.0;
+  if (scale < 0.35) scale = 0.35;
+
+  scaler.style.transform = `scale(${scale.toFixed(4)})`;
+}
+
+window.setViewMode = setViewMode;
+window.toggleIASidebar = toggleIASidebar;
+window.setAppScale = setAppScale;
+window.updateStageScale = updateStageScale;
 
 // ==========================================================================
 // 9. Toast Notification System
@@ -5761,6 +5970,7 @@ function updateCeoDemoUI() {
   } else {
     banner.classList.add('hidden');
   }
+  setTimeout(updateStageScale, 50);
 }
 
 // ==========================================================================
@@ -5847,4 +6057,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-reset-demo')?.addEventListener('click', () => {
     window.location.reload();
   });
+
+  // Scale and resize observers
+  window.addEventListener('resize', updateStageScale);
+  setTimeout(updateStageScale, 100);
 });

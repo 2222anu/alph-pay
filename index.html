@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ALPH PAY · Parent & Child Dual-App Experience & IA System</title>
-  <meta name="description" content="ALPH PAY - Parent Control Layer & Child Spending Layer. Saudi Family Fintech App featuring real-time limits, instant approvals, allowances, and QR payments.">
+  <title>AMANAH · Saudi Family Fintech (Trust + Responsibility + Protection)</title>
+  <meta name="description" content="AMANAH - Saudi Family Fintech featuring real-time limits, instant approvals, allowances, and QR payments. Built on Trust, Responsibility, and Protection.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Readex+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,18 +20,9 @@
           <span class="logo-triangle">▲</span>
         </div>
         <div class="brand-text-col">
-          <div class="brand-name">ALPH<span class="brand-accent">PAY</span></div>
-          <div class="brand-tagline">Parent & Child Architecture · Saudi Fintech</div>
+          <div class="brand-name">AMANAH</div>
+          <div class="brand-tagline">Trust + Responsibility + Protection · Saudi Family Fintech</div>
         </div>
-      </div>
-      
-      <div class="app-mode-chips">
-        <span class="mode-chip parent-chip">
-          <span class="dot-indicator indigo"></span> Parent = Control Layer (17)
-        </span>
-        <span class="mode-chip child-chip">
-          <span class="dot-indicator teal"></span> Child = Spending Layer (14)
-        </span>
       </div>
     </div>
 
@@ -51,18 +42,39 @@
           Child App
         </button>
         <button class="view-tab" data-view="ia" id="tab-ia-view">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-          IA Tree (31)
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20M4 19.5V3A2.5 2.5 0 0 1 6.5 0.5H20M14 6h6m-6 4h6m-6 4h6"/></svg>
+          31 IA Architecture
         </button>
       </div>
 
       <!-- Start Login / Onboarding Flow Buttons -->
       <button class="view-tab" style="background: var(--parent-subtle); color: var(--parent-primary); border: 1px solid var(--parent-border);" id="btn-start-onboarding" onclick="startParentOnboardingFlow()">
-        <span>🔑</span> Login / Onboarding (01)
+        <span>🔑</span> Login (01)
       </button>
       <button class="view-tab" style="background: var(--child-subtle); color: var(--child-deep); border: 1px solid var(--child-border);" id="btn-start-child-onboarding" onclick="startChildOnboardingFlow()">
-        <span>👧</span> Child Onboarding (C01)
+        <span>👧</span> Child (C01)
       </button>
+
+      <!-- CEO Signature Demo Button -->
+      <button class="ceo-demo-btn" id="launch-ceo-demo">
+        <span class="play-icon">▶</span> CEO Signature Demo
+      </button>
+
+      <!-- Toggle IA Sidebar Button in Header -->
+      <button class="view-tab" id="btn-header-toggle-ia" onclick="toggleIASidebar()" style="display: flex; gap: 6px; align-items: center;">
+        <span>📁</span> <span id="btn-header-toggle-ia-lbl">Show IA</span>
+      </button>
+
+      <!-- Screen Fit / Zoom Scale Dropdown -->
+      <select class="header-lang-select header-scale-select" id="header-scale-select" onchange="setAppScale(this.value)" title="Screen Fit & Scale / స్క్రీన్ సైజు">
+        <option value="auto" selected>📐 Auto Fit Screen</option>
+        <option value="1">100%</option>
+        <option value="0.9">90%</option>
+        <option value="0.85">85%</option>
+        <option value="0.75">75%</option>
+        <option value="0.65">65%</option>
+        <option value="0.5">50%</option>
+      </select>
 
       <!-- 5-Language Multi-Lingual Selector -->
       <select class="header-lang-select" id="header-lang-select" onchange="setAppLanguage(this.value)" title="Change Language / భాష / भाषा / மொழி">
@@ -89,36 +101,58 @@
     </div>
   </header>
 
-
+  <!-- CEO Interactive Tour Floating Banner -->
+  <div class="ceo-banner hidden" id="ceo-banner">
+    <div class="ceo-step-counter">
+      <span class="badge-step" id="ceo-step-num">Step 1 of 12</span>
+      <span class="ceo-step-title" id="ceo-step-title">Demo Initialization</span>
+    </div>
+    <div class="ceo-step-desc" id="ceo-step-desc">
+      Initializing CEO Guided Presentation...
+    </div>
+    <div class="ceo-banner-actions">
+      <button class="btn-ceo-nav" id="ceo-prev-btn" disabled>← Previous</button>
+      <button class="btn-ceo-nav btn-primary-ceo" id="ceo-next-btn">Next Step →</button>
+      <button class="btn-ceo-nav btn-ceo-close" id="ceo-close-btn" title="Exit Demo">✕</button>
+    </div>
+  </div>
 
   <!-- Main Workspace Layout -->
   <main class="main-workspace" id="main-workspace">
 
-    <!-- Left Sidebar: Complete 31-Section Information Architecture Inspector -->
-    <aside class="ia-sidebar" id="ia-sidebar">
+    <!-- Left Sidebar: 31 IA Tree Inspector -->
+    <aside class="ia-sidebar collapsed" id="ia-sidebar">
       <div class="ia-sidebar-header">
         <div class="ia-header-top">
-          <h3>Information Architecture</h3>
+          <h3>31-Section IA Inspector</h3>
           <span class="ia-count-badge">31 Sections</span>
         </div>
-        <p class="ia-subtitle">Click any leaf node to deep-link simulate that screen</p>
+        <div class="ia-subtitle">Sovereign Saudi Family Fintech Architecture</div>
         <div class="ia-search-bar">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          <input type="text" id="ia-search-input" placeholder="Search screens, flows, limits, QR..." aria-label="Search Information Architecture">
+          <span>🔍</span>
+          <input type="text" id="ia-search-input" placeholder="Search architecture code or title...">
         </div>
         <div class="ia-tree-actions">
-          <button class="tree-act-btn" id="btn-expand-all">Expand all</button>
-          <button class="tree-act-btn" id="btn-collapse-all">Collapse all</button>
+          <button class="tree-act-btn" id="btn-expand-all">Expand All</button>
+          <button class="tree-act-btn" id="btn-collapse-all">Collapse All</button>
         </div>
       </div>
-
       <div class="ia-tree-container" id="ia-tree-container">
-        <!-- Rendered via JavaScript for all 31 sections -->
+        <!-- Rendered dynamically by app.js -->
       </div>
     </aside>
 
     <!-- Center / Right: Dual Phone Viewport Workspace -->
     <section class="device-stage" id="device-stage">
+
+      <!-- Floating Sidebar Toggle Button -->
+      <button class="ia-sidebar-toggle-btn" id="btn-toggle-sidebar" onclick="toggleIASidebar()" style="display: flex;">
+        <span>📁</span>
+        <span id="btn-toggle-sidebar-lbl">Show IA Tree</span>
+      </button>
+
+      <!-- Auto-Fitting Scaled Container for Phones -->
+      <div class="stage-viewport-scaler" id="stage-viewport-scaler">
 
       <!-- ==================================================== -->
       <!-- PARENT APP DEVICE (Control Layer · Indigo Accent)   -->
@@ -280,6 +314,7 @@
         </div>
       </div>
 
+      </div><!-- End stage-viewport-scaler -->
     </section>
   </main>
 
