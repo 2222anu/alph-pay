@@ -5874,3 +5874,48 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', updateStageScale);
   setTimeout(updateStageScale, 100);
 });
+
+// Programmatic fixes for missing components
+function renderChildScan() {
+  const currentChild = getCurrentActiveChild();
+  return `
+    <div class="ia-screen-crumb child-crumb">
+      <span>IA Section C06 · QR Scanner Simulator</span>
+    </div>
+    <div class="screen-header-row">
+      <h3 style="font-size: 18px; font-weight: 800;">Scan & Pay (C06)</h3>
+    </div>
+    <div style="text-align: center; padding: 30px 15px; background: var(--bg-surface-elevated); border: 2px dashed var(--child-deep); border-radius: var(--radius-lg); margin-top: 10px;">
+      <div style="font-size: 48px; margin-bottom: 12px;">📷</div>
+      <h4 style="font-size: 15px; font-weight: 700; color: var(--text-primary);">QR Code Scanner Simulator</h4>
+      <p style="font-size: 12px; color: var(--text-secondary); margin: 8px 0 16px 0;">
+        Simulate scanning a merchant QR code directly by triggering one of the quick options below.
+      </p>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <button class="btn-child-action" onclick="simulateScanMerchant('Al Jarir Bookstore', 85.00, 'Education & Books')">
+          🛍️ Scan Al Jarir Bookstore (SAR 85.00)
+        </button>
+        <button class="btn-child-action" onclick="simulateScanMerchant('School Cafeteria', 15.00, 'Food')">
+          🍔 Scan School Cafeteria (SAR 15.00)
+        </button>
+        <button class="btn-child-action" onclick="simulateScanMerchant('PlayStation Store', 120.00, 'Gaming')">
+          🎮 Scan PlayStation Store (SAR 120.00)
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+function autoFillMockOTP() {
+  const code = '123456';
+  for (let i = 1; i <= 6; i++) {
+    const el = document.getElementById(`otp-d-${i}`);
+    if (el) {
+      el.value = code[i - 1];
+      el.dispatchEvent(new Event('input', { bubbles: true }));
+    }
+  }
+}
+
+window.renderChildScan = renderChildScan;
+window.autoFillMockOTP = autoFillMockOTP;
