@@ -4731,6 +4731,7 @@ window.openParentModal = function(type, payload = {}) {
   const sheet = document.getElementById('parent-bottom-sheet');
   if (!modalLayer || !sheet) return;
 
+  const rc = getAppRegionConfig();
   let html = '';
 
   if (type === 'allowance') {
