@@ -9,6 +9,9 @@
 // ==========================================================================
 const I18N = {
   en: {
+    monthlyLimit: 'Monthly Limit',
+    perTransactionLimit: 'Per-Transaction Limit',
+    blockedMerchants: 'Blocked Merchants',
     appName: 'AMANAH',
     parentTitle: 'Parent Control Layer',
     childTitle: 'Child Spending Layer',
@@ -125,6 +128,9 @@ const I18N = {
     openYouthHomeBtn: 'Open My Youth Home (C02) →'
   },
   ar: {
+    monthlyLimit: 'الحد الشهري',
+    perTransactionLimit: 'حد العملية الواحدة',
+    blockedMerchants: 'التجار المحظورون',
     appName: 'أمانة (AMANAH)',
     parentTitle: 'لوحة تحكم ولي الأمر',
     childTitle: 'محفظة الأبناء والإنفاق',
@@ -241,6 +247,9 @@ const I18N = {
     openYouthHomeBtn: 'فتح صفحتي الرئيسية (C02) ←'
   },
   te: {
+    monthlyLimit: 'నెలవారీ పరిమితి',
+    perTransactionLimit: 'లావాదేవీ పరిమితి',
+    blockedMerchants: 'నిరోధించబడిన వ్యాపారులు',
     appName: 'అమానా (AMANAH)',
     parentTitle: 'తండ్రి కంట్రోల్ లేయర్ (Parent)',
     childTitle: 'పిల్లల స్పెండింగ్ లేయర్ (Child)',
@@ -357,6 +366,9 @@ const I18N = {
     openYouthHomeBtn: 'నా యూత్ హోమ్ ఓపెన్ చేయండి (C02) →'
   },
   hi: {
+    monthlyLimit: 'मासिक सीमा',
+    perTransactionLimit: 'प्रति-लेनदेन सीमा',
+    blockedMerchants: 'प्रतिबंधित व्यापारी',
     appName: 'अमानह (AMANAH)',
     parentTitle: 'अभिभावक नियंत्रण (Parent)',
     childTitle: 'बाल खर्च व वॉलेट (Child)',
@@ -473,6 +485,9 @@ const I18N = {
     openYouthHomeBtn: 'मेरा यूथ होम खोलें (C02) →'
   },
   ta: {
+    monthlyLimit: 'மாதாந்திர வரம்பு',
+    perTransactionLimit: 'ஒரு பரிவர்த்தனை வரம்பு',
+    blockedMerchants: 'தடுக்கப்பட்ட வணிகர்கள்',
     countryMobileLabel: 'நாடு மற்றும் மொபைல் (01.2)',
     samaTerms: 'தொடர்வதன் மூலம் நீங்கள் வங்கி விதிமுறைகளை ஏற்றுக்கொள்கிறீர்கள்.',
     sendOtpBtn: 'OTP குறியீட்டை அனுப்பவும் (01.2) →',
@@ -1073,6 +1088,7 @@ const AppState = {
       balance: 185.00,
       dailyLimit: 50.00,
       dailyTxCountLimit: 3,
+      perTransactionLimit: 30.00,
       txCompletedToday: 1,
       spentToday: 5.00,
       monthlyLimit: 400.00,
@@ -1143,6 +1159,7 @@ const AppState = {
       balance: 85.00,
       dailyLimit: 25.00,
       dailyTxCountLimit: 2,
+      perTransactionLimit: 20.00,
       txCompletedToday: 0,
       spentToday: 0.00,
       monthlyLimit: 150.00,
@@ -4204,7 +4221,6 @@ window.processChildQrPayment = function(merchant, amountDisplay, category) {
     return;
   }
 
-  // Convert display amount to base SAR for state updates
   const amountSAR = parsed / meta.rate;
   const availableToday = Math.max(0, currentChild.dailyLimit - currentChild.spentToday);
 
@@ -4213,12 +4229,34 @@ window.processChildQrPayment = function(merchant, amountDisplay, category) {
     category.toLowerCase().includes(bc.toLowerCase()) || bc.toLowerCase().includes(category.toLowerCase())
   );
 
-  // Scenario 1: Exceeds Daily Limit or Blocked Category -> Send Real-time Request & OTP to Dad
-  if (amountSAR > availableToday || isBlockedCategory || currentChild.spendingMode === 'approval') {
+  // Check if merchant is blocked
+  const isBlockedMerchant = currentChild.blockedMerchants && currentChild.blockedMerchants.some(bm =>
+    merchant.toLowerCase().includes(bm.toLowerCase()) || bm.toLowerCase().includes(merchant.toLowerCase())
+  );
+
+  const exceedsDailyLimit = amountSAR > availableToday;
+  const exceedsMonthlyLimit = (currentChild.spentThisMonth + amountSAR) > currentChild.monthlyLimit;
+  const exceedsPerTxLimit = amountSAR > currentChild.perTransactionLimit;
+  const exceedsTxCountLimit = currentChild.txCompletedToday >= currentChild.dailyTxCountLimit;
+  const isStrictApproval = currentChild.spendingMode === 'approval_all' || currentChild.spendingMode === 'approval';
+
+  if (isBlockedCategory || isBlockedMerchant || exceedsDailyLimit || exceedsMonthlyLimit || exceedsPerTxLimit || exceedsTxCountLimit || isStrictApproval) {
     const reqId = 'req-' + Date.now();
-    const reasonText = isBlockedCategory 
-      ? `Blocked Category: ${category}` 
-      : `Exceeds daily spending limit (${formatMoney(currentChild.dailyLimit)})`;
+    let reasonText = 'Parent approval required';
+
+    if (isBlockedCategory) {
+      reasonText = `Blocked Category: ${category}`;
+    } else if (isBlockedMerchant) {
+      reasonText = `Merchant blocked by parent: ${merchant}`;
+    } else if (exceedsPerTxLimit) {
+      reasonText = `Per-transaction limit exceeded`;
+    } else if (exceedsDailyLimit) {
+      reasonText = `Daily spending limit exceeded`;
+    } else if (exceedsMonthlyLimit) {
+      reasonText = `Monthly spending limit exceeded`;
+    } else if (exceedsTxCountLimit) {
+      reasonText = `Daily transaction count limit reached`;
+    }
 
     const newReq = {
       id: reqId,
@@ -4233,11 +4271,8 @@ window.processChildQrPayment = function(merchant, amountDisplay, category) {
     };
 
     AppState.pendingRequests.unshift(newReq);
-
-    // Show Child Waiting Sheet
     openChildPendingApprovalSheet(newReq);
 
-    // Immediately notify Dad's Phone & open Dad's 6-Digit OTP Authorization Modal
     renderParentScreen();
     showToast(`🚨 High Amount Request! Notification & OTP sent to Dad's phone.`, 'parent');
     showToast(`⏳ Limit exceeded. Approval Request & OTP sent to Dad!`, 'child');
@@ -4249,7 +4284,6 @@ window.processChildQrPayment = function(merchant, amountDisplay, category) {
     return;
   }
 
-  // Scenario 2: Within limits & allowed -> Auto Approve
   if (currentChild.balance < amountSAR) {
     showToast('Insufficient wallet balance', 'child');
     return;
@@ -4257,6 +4291,7 @@ window.processChildQrPayment = function(merchant, amountDisplay, category) {
 
   currentChild.balance -= amountSAR;
   currentChild.spentToday += amountSAR;
+  currentChild.spentThisMonth += amountSAR;
   currentChild.txCompletedToday += 1;
   AppState.parent.availableBalance -= amountSAR;
   AppState.parent.childSpendingThisMonth += amountSAR;
@@ -4586,6 +4621,7 @@ window.approvePendingRequest = function(reqId) {
   if (childObj) {
     childObj.balance = Math.max(0, childObj.balance - req.amount);
     childObj.spentToday += req.amount;
+    childObj.spentThisMonth += req.amount;
     childObj.txCompletedToday += 1;
   }
   AppState.parent.availableBalance = Math.max(0, AppState.parent.availableBalance - req.amount);
@@ -4699,6 +4735,7 @@ window.openParentModal = function(type, payload = {}) {
 
   if (type === 'allowance') {
     const child = AppState.children.find(c => c.id === payload.childId) || AppState.children[0];
+    const rc = getAppRegionConfig();
     html = `
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
         <span class="ia-count-badge">IA Section 04 · Allowance Management</span>
@@ -4737,8 +4774,18 @@ window.openParentModal = function(type, payload = {}) {
       </div>
 
       <div class="form-group">
-        <label class="form-label">05.3 Daily Spending Limit (SAR)</label>
+        <label class="form-label">05.3 Daily Spending Limit (${rc.currencySymbol || 'SAR'})</label>
         <input type="number" class="form-input" id="modal-ctrl-daily" value="${child.dailyLimit}">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">05.7 Monthly Spending Limit (${rc.currencySymbol || 'SAR'})</label>
+        <input type="number" class="form-input" id="modal-ctrl-monthly" value="${child.monthlyLimit || 400.00}">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">05.8 Per-Transaction Limit (${rc.currencySymbol || 'SAR'})</label>
+        <input type="number" class="form-input" id="modal-ctrl-per-tx" value="${child.perTransactionLimit || 30.00}">
       </div>
 
       <!-- FEATURE 5: Daily Transaction Count Limit Rule -->
@@ -4752,6 +4799,28 @@ window.openParentModal = function(type, payload = {}) {
           <option value="10" ${child.dailyTxCountLimit === 10 ? 'selected' : ''}>10 transactions / day</option>
         </select>
         <small style="font-size: 10px; color: var(--text-secondary); display: block; margin-top: 2px;">Transactions beyond this require parent OTP approval.</small>
+      </div>
+
+      <!-- FEATURE 9.5: Merchant Restrictions (Allowed vs Blocked UI) -->
+      <div class="form-group">
+        <label class="form-label">05.9 Merchant Restrictions</label>
+        
+        <div style="font-size: 11px; font-weight: 700; color: var(--status-danger); margin-bottom: 4px;">🚫 BLOCKED MERCHANTS</div>
+        <div id="blocked-merchants-list" style="display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px;">
+          ${(child.blockedMerchants || []).length === 0 ? `
+            <div style="font-size: 10px; color: var(--text-tertiary); font-style: italic; padding: 4px 0;">No blocked merchants.</div>
+          ` : child.blockedMerchants.map(m => `
+            <div class="category-rule-row" style="padding: 4px 8px;">
+              <span class="category-rule-meta"><span>🏢</span> ${m}</span>
+              <button class="tree-act-btn" style="padding: 2px 6px; font-size: 10px; color: var(--status-success);" onclick="toggleChildMerchant('${child.id}', '${m}', 'allow')">Unblock</button>
+            </div>
+          `).join('')}
+        </div>
+        
+        <div style="display: flex; gap: 6px; margin-top: 6px;">
+          <input type="text" id="add-blocked-merchant-input" class="form-input" style="flex: 1; padding: 6px 10px; font-size: 11px;" placeholder="e.g. Roblox Corp">
+          <button class="tree-act-btn" style="background: var(--status-danger); color: #fff; border: none; font-size: 11px; padding: 0 12px; font-weight: bold;" onclick="addChildMerchantBlock('${child.id}')">Block</button>
+        </div>
       </div>
 
       <!-- FEATURE 9: Restricted Category Management (Allowed vs Blocked UI) -->
@@ -5175,18 +5244,22 @@ window.toggleChildCategory = function(childId, categoryName, action) {
 
 window.saveControls = function(childId) {
   const daily = parseFloat(document.getElementById('modal-ctrl-daily').value) || 50;
+  const monthly = parseFloat(document.getElementById('modal-ctrl-monthly').value) || 400;
+  const perTx = parseFloat(document.getElementById('modal-ctrl-per-tx').value) || 30;
   const txCount = parseInt(document.getElementById('modal-ctrl-tx-count').value) || 3;
   const mode = document.getElementById('modal-ctrl-mode').value;
   const child = AppState.children.find(c => c.id === childId);
   if (child) {
     child.dailyLimit = daily;
+    child.monthlyLimit = monthly;
+    child.perTransactionLimit = perTx;
     child.dailyTxCountLimit = txCount;
     child.spendingMode = mode;
   }
   closeParentModal();
   renderParentScreen();
   renderChildScreen();
-  showToast(`Updated limits for ${child.name}: SAR ${daily}/day · Max ${txCount} tx/day`, 'parent');
+  showToast(`Updated limits for ${child.name}: ${formatMoney(daily)}/day · ${formatMoney(monthly)}/month · ${formatMoney(perTx)}/tx`, 'parent');
 };
 
 
@@ -5207,6 +5280,7 @@ window.createChildInvite = function() {
     dailyLimit: 30.00,
     spentToday: 0.00,
     monthlyLimit: 200.00,
+    perTransactionLimit: 25.00,
     spentThisMonth: 0.00,
     allowanceAmount: 50.00,
     allowanceFreq: 'Weekly',
@@ -5919,3 +5993,37 @@ function autoFillMockOTP() {
 
 window.renderChildScan = renderChildScan;
 window.autoFillMockOTP = autoFillMockOTP;
+
+
+window.toggleChildMerchant = function(childId, merchantName, action) {
+  const child = AppState.children.find(c => c.id === childId);
+  if (!child) return;
+
+  if (action === 'block') {
+    if (!child.blockedMerchants) child.blockedMerchants = [];
+    if (!child.blockedMerchants.includes(merchantName)) {
+      child.blockedMerchants.push(merchantName);
+    }
+    showToast(`Merchant '${merchantName}' is now BLOCKED for ${child.name}`, 'parent');
+  } else {
+    if (child.blockedMerchants) {
+      child.blockedMerchants = child.blockedMerchants.filter(m => m !== merchantName);
+    }
+    showToast(`Merchant '${merchantName}' is now UNBLOCKED for ${child.name}`, 'parent');
+  }
+
+  openParentModal('controls', { childId });
+  renderParentScreen();
+};
+
+window.addChildMerchantBlock = function(childId) {
+  const input = document.getElementById('add-blocked-merchant-input');
+  if (!input) return;
+  const merchantName = input.value.trim();
+  if (!merchantName) {
+    showToast('Please enter a merchant name', 'parent');
+    return;
+  }
+  
+  toggleChildMerchant(childId, merchantName, 'block');
+};
